@@ -56,3 +56,82 @@ AFFICHER " = "
 AFFICHER sum
 FIN_ALGORITHME
 ```
+
+## 2. CONDITIONS
+
+### 2.1. ALTERNATIVES SIMPLES
+```js
+FONCTIONS_UTILISEES
+  //nombre, chaine, liste
+VARIABLES
+age EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+LIRE age
+SI (age>=18) ALORS
+	DEBUT_SI
+	AFFICHER "Oui, vous pouvez voter."
+	FIN_SI
+	SINON
+		DEBUT_SINON
+		AFFICHER "Reviens la prochaine."
+		FIN_SINON
+FIN_ALGORITHME
+```
+
+```js
+FONCTIONS_UTILISEES
+  //nombre, chaine, liste
+VARIABLES
+pays EST_DU_TYPE CHAINE
+DEBUT_ALGORITHME
+LIRE pays
+SI (pays=="France" OU pays=="Belgique") ALORS
+	DEBUT_SI
+	AFFICHER "Vous pouvez participer au sondage."
+	FIN_SI
+	SINON
+		DEBUT_SINON
+		AFFICHER "Vous n'êtes pas eligible..."
+		FIN_SINON
+FIN_ALGORITHME
+
+```
+
+### 2.2. ALTERNATIVES MUTIPLES & CHOIX IMBRIQUES
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+  language EST_DU_TYPE CHAINE
+DEBUT_ALGORITHME
+  LIRE language
+  SI (language=="french") ALORS
+    DEBUT_SI
+    AFFICHER "Salut!"
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      SI (language=="english") ALORS
+        DEBUT_SI
+        AFFICHER "Hello!"
+        FIN_SI
+        SINON
+          DEBUT_SINON
+          SI (language=="spanish") ALORS
+            DEBUT_SI
+            AFFICHER "Hola!"
+            FIN_SI
+            SINON
+              DEBUT_SINON
+              SI (language=="german") ALORS
+                DEBUT_SI
+                AFFICHER "Guten tag!"
+                FIN_SI
+                SINON
+                  DEBUT_SINON
+                  AFFICHER "Langue non supportée."
+                  FIN_SINON
+              FIN_SINON
+          FIN_SINON
+      FIN_SINON
+FIN_ALGORITHME
+```
