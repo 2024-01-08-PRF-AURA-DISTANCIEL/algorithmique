@@ -135,3 +135,40 @@ DEBUT_ALGORITHME
       FIN_SINON
 FIN_ALGORITHME
 ```
+
+## 3. BOUCLES
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+  x EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  // DRY : Don't repeat yourself
+  POUR x ALLANT_DE 50 A 100 
+    DEBUT_POUR
+    AFFICHER "Le carré de "
+    AFFICHER x
+    AFFICHER " est: "
+    AFFICHERCALCUL* pow(x,2)
+    FIN_POUR
+FIN_ALGORITHME
+```
+
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+  chiffre EST_DU_TYPE NOMBRE
+  counter EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE chiffre
+  POUR counter ALLANT_DE 0 A 13 
+    DEBUT_POUR
+    // 5 x 0 = 0
+    // 5 x 1 = 5
+    AFFICHER chiffre
+    AFFICHER " x "
+    AFFICHER counter
+    AFFICHER " = "
+    AFFICHERCALCUL* chiffre*counter
+    FIN_POUR
+FIN_ALGORITHME
+```
