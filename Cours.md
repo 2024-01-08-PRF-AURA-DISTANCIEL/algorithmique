@@ -172,3 +172,95 @@ DEBUT_ALGORITHME
     FIN_POUR
 FIN_ALGORITHME
 ```
+
+```js
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+codePin EST_DU_TYPE NOMBRE 
+codePinATester EST_DU_TYPE NOMBRE
+nombreTentatives EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+// 1. Ajout du code pin des les reglages de l'appareil
+LIRE codePin // 1234
+
+nombreTentatives PREND_LA_VALEUR 3
+
+
+TANT_QUE (codePinATester!=codePin ET nombreTentatives<=3) FAIRE
+	DEBUT_TANT_QUE
+  LIRE codePinATester
+  nombreTentatives PREND_LA_VALEUR nombreTentatives+1
+  SI (codePinATester!=codePin) ALORS 
+  	DEBUT_SI
+  	AFFICHER "Code Pin invalide. Réecrire"
+  	FIN_SI
+  	SINON
+  		DEBUT_SINON
+  		AFFICHER "Bienvenue."
+  		FIN_SINON
+	FIN_TANT_QUE
+FIN_ALGORITHME
+```
+
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+name EST_DU_TYPE CHAINE
+sub EST_DU_TYPE CHAINE
+i EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+LIRE name 
+AFFICHERCALCUL* name.length
+
+//[a,b[
+// christian
+sub PREND_LA_VALEUR name.substr(1,2) 
+AFFICHER* sub
+
+
+POUR i ALLANT_DE 0 A name.length-1
+	DEBUT_POUR
+	sub PREND_LA_VALEUR name.substr(i,1)
+	AFFICHER* sub
+	FIN_POUR
+
+FIN_ALGORITHME
+
+```
+
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+name EST_DU_TYPE CHAINE
+sub EST_DU_TYPE CHAINE
+i EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+// christian
+LIRE name
+name PREND_LA_VALEUR name+" lisangola"
+AFFICHER name
+FIN_ALGORITHME
+```
+
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+name EST_DU_TYPE CHAINE
+a EST_DU_TYPE CHAINE
+i EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+// christian
+// ASCII
+LIRE name
+a PREND_LA_VALEUR String.fromCharCode(name.charCodeAt(0))
+AFFICHER a
+
+POUR i ALLANT_DE 0 A name.length
+	DEBUT_POUR
+	a PREND_LA_VALEUR String.fromCharCode(name.charCodeAt(i))
+	AFFICHER* a
+	FIN_POUR  
+FIN_ALGORITHME
+
+```

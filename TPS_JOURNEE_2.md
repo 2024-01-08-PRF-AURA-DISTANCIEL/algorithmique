@@ -72,3 +72,218 @@ FIN_ALGORITHME
 
 ```
 
+```js
+V3 Méthode de complément
+
+
+//a = a + b
+//b = a - b (À cette étape, b devient la valeur originale de a)
+//a = a - b (Maintenant, a prend la valeur originale de b)
+
+// a = 2
+// b = 1
+
+// a = a+b => 2+1 => 3
+// b = a-b => 3 - 1 => 2
+// a = a-b => 3 - 2 => 1
+
+
+FONCTIONS_UTILISEES
+VARIABLES
+  chiffre EST_DU_TYPE NOMBRE
+  counter EST_DU_TYPE NOMBRE
+  premierMultiplicateur EST_DU_TYPE NOMBRE
+  dernierMultiplicateur EST_DU_TYPE NOMBRE
+  temp EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE chiffre
+  SI (chiffre==0) ALORS
+    DEBUT_SI
+    AFFICHER "Vous devez entrer une valeur differente de 0"
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      LIRE premierMultiplicateur
+      LIRE dernierMultiplicateur
+
+      SI (premierMultiplicateur > dernierMultiplicateur) ALORS
+        DEBUT_SI
+        premierMultiplicateur PREND_LA_VALEUR premierMultiplicateur + dernierMultiplicateur
+        dernierMultiplicateur PREND_LA_VALEUR premierMultiplicateur - dernierMultiplicateur
+        premierMultiplicateur PREND_LA_VALEUR premierMultiplicateur - dernierMultiplicateur
+        FIN_SI
+      POUR counter ALLANT_DE premierMultiplicateur A dernierMultiplicateur
+        DEBUT_POUR
+        AFFICHER chiffre
+        AFFICHER " x "
+        AFFICHER counter
+        AFFICHER " = "
+        AFFICHERCALCUL* chiffre*counter
+        FIN_POUR
+      FIN_SINON
+FIN_ALGORITHME
+
+```
+
+### TP2
+Ecrire un algorithme qui permettra de calculer plusieurs tables de multiplication.
+
+On va d’abord demander à l’utilisateur de saisir le 1er nombre dont il faut connaître la table de multiple, ensuite on lui demandera le dernier nombre.
+
+Si par exemple le premier nombre est 3 et le dernier 8, on va afficher toutes les tables de multiplications de 3 à 8, donc : 3,4,5,6,7,8
+
+Après on demandera à l’utilisateur d’entre le premier nombre et le dernier nombre à multiplier.
+
+Si par exemple il saisit comme premier nombre 3 et dernier nombre 7, on aura;
+
+3 x 3 = 9  4 x 3 = 12 …  8 x 3 = 24
+3 x 4 = 12  4 x 4 = 14 …  8 x 4 = 32
+3 x 5 =15  4 x 5 = 20 …  8 x 5 = 40
+3 x 6 = 18  4 x 6 = 24 …  8 x 6 = 48
+3 x 7 = 21  4 x 7 = 28 …  8 x 7 = 56
+
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+  premierNombre EST_DU_TYPE NOMBRE
+  dernierNombre EST_DU_TYPE NOMBRE
+  premierMultiplicateur EST_DU_TYPE NOMBRE
+  dernierMultiplicateur EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+  j EST_DU_TYPE NOMBRE
+  temp EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "Entrez le premier nombre pour la table de multiplication :"
+  LIRE premierNombre
+  AFFICHER* "Entrez le dernier nombre pour la table de multiplication :"
+  LIRE dernierNombre
+  SI (premierNombre > dernierNombre) ALORS
+    DEBUT_SI
+    temp PREND_LA_VALEUR premierNombre
+    premierNombre PREND_LA_VALEUR dernierNombre
+    dernierNombre PREND_LA_VALEUR temp
+    FIN_SI
+  AFFICHER* "Entrez le premier multiplicateur :"
+  LIRE premierMultiplicateur
+  AFFICHER* "Entrez le dernier multiplicateur :"
+  LIRE dernierMultiplicateur
+  SI (premierMultiplicateur > dernierMultiplicateur) ALORS
+    DEBUT_SI
+    temp PREND_LA_VALEUR premierMultiplicateur
+    premierMultiplicateur PREND_LA_VALEUR dernierMultiplicateur
+    dernierMultiplicateur PREND_LA_VALEUR temp
+    FIN_SI
+  POUR i ALLANT_DE premierNombre A dernierNombre
+    DEBUT_POUR
+    POUR j ALLANT_DE premierMultiplicateur A dernierMultiplicateur
+      DEBUT_POUR
+      AFFICHER i
+      AFFICHER " x "
+      AFFICHER j
+      AFFICHER " = "
+      AFFICHERCALCUL* i * j
+      FIN_POUR
+    AFFICHER* "----------"
+    FIN_POUR
+FIN_ALGORITHME
+```
+
+
+### TP3
+Ecrivez un programme qui affiche en console les nombres de 1 à n:
+
+pour les multiples de trois, il affiche "fizz" à la place du nombre
+et pour les multiples de cinq de cinq, imprimez "buzz".
+Pour les nombres qui sont des multiples multiples à la fois de trois et de cinq, imprimez "fizzbuzz".
+Sinon, il affiche le nombre
+
+Exemple
+Si n = 5
+1
+2
+fizz
+4
+Buzz
+
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+  nbr EST_DU_TYPE NOMBRE
+  compteur EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE nbr
+  POUR compteur ALLANT_DE 1 A nbr
+    DEBUT_POUR
+    SI (compteur%3==0 ET compteur%5==0) ALORS
+      DEBUT_SI
+      AFFICHER compteur
+      AFFICHER* "- FizzBuzz"
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        SI (compteur%3==0) ALORS
+          DEBUT_SI
+          AFFICHER compteur
+          AFFICHER* "- Fizz"
+          FIN_SI
+          SINON
+        SI (compteur%5==0) ALORS
+          DEBUT_SI
+          AFFICHER compteur
+          AFFICHER* "- Buzz"
+          FIN_SI
+          SINON
+            DEBUT_SINON
+            AFFICHER* compteur
+            FIN_SINON
+        FIN_SINON
+    FIN_POUR
+FIN_ALGORITHME
+```
+
+
+### TP4
+Écrivez un programme Java qui demande à l’utilisateur d’entrer un nombre et qui ensuite va calculer et afficher la factorielle de ce nombre:
+
+Ex:
+
+Nombre : 3
+
+Factorielle de 3 : 1x2x3= 6
+
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+facto EST_DU_TYPE NOMBRE
+counter EST_DU_TYPE NOMBRE
+n EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+LIRE n
+SI (n<0) ALORS
+	DEBUT_SI
+	AFFICHER "La factorielle d'un nombre négatif n'est pas définie."
+	FIN_SI
+	SINON
+		DEBUT_SINON
+		SI (n==0 || n==1) ALORS
+			DEBUT_SI
+			AFFICHER "La factorielle de "
+			AFFICHER n
+			AFFICHER " est 1"
+			FIN_SI
+			SINON
+				DEBUT_SINON
+				facto PREND_LA_VALEUR 1
+				POUR counter ALLANT_DE 1 A n
+					DEBUT_POUR
+					facto PREND_LA_VALEUR facto*counter
+					FIN_POUR
+					AFFICHER "La facotielle de "
+					AFFICHER n
+					AFFICHER " est "
+					AFFICHER facto
+				FIN_SINON
+		FIN_SINON
+FIN_ALGORITHME
+
+```
