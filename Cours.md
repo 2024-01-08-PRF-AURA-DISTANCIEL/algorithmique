@@ -262,5 +262,4 @@ POUR i ALLANT_DE 0 A name.length
 	AFFICHER* a
 	FIN_POUR  
 FIN_ALGORITHME
-
 ```
