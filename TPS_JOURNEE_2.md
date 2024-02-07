@@ -483,3 +483,46 @@ DEBUT_ALGORITHME
   AFFICHER reversed
 FIN_ALGORITHME
 ```
+
+
+```js
+```js
+FONCTIONS_UTILISEES
+  FONCTION calculPuissance(n,p)
+    VARIABLES_FONCTION
+      i EST_DU_TYPE NOMBRE
+      resultat EST_DU_TYPE NOMBRE
+    DEBUT_FONCTION
+    resultat PREND_LA_VALEUR 1
+    POUR i ALLANT_DE 1 A p
+      DEBUT_POUR
+      resultat PREND_LA_VALEUR resultat*n
+      FIN_POUR
+    RENVOYER resultat
+    FIN_FONCTION
+
+  FONCTION reverseString(str)
+    VARIABLES_FONCTION
+      counter EST_DU_TYPE NOMBRE
+      reversed EST_DU_TYPE CHAINE
+      size EST_DU_TYPE NOMBRE
+    DEBUT_FONCTION
+    size PREND_LA_VALEUR str.length
+    POUR counter ALLANT_DE 0 A size-1
+      DEBUT_POUR
+      reversed PREND_LA_VALEUR str.substr(counter,1)+reversed
+      FIN_POUR
+        AFFICHER reversed
+    FIN_FONCTION
+VARIABLES
+  num EST_DU_TYPE NOMBRE
+  power EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE num
+  LIRE power
+  AFFICHERCALCUL* calculPuissance(4,2)
+  AFFICHERCALCUL* calculPuissance(num,power)
+  AFFICHERCALCUL* pow(num,power)
+  APPELER_FONCTION reverseString("papa")
+FIN_ALGORITHME
+```

@@ -263,3 +263,144 @@ POUR i ALLANT_DE 0 A name.length
 	FIN_POUR  
 FIN_ALGORITHME
 ```
+## 4. TABLEAUX
+
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+notes EST_DU_TYPE LISTE
+i EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+
+// Sans boucles
+notes[0] PREND_LA_VALEUR 12
+notes[1] PREND_LA_VALEUR 13
+notes[2] PREND_LA_VALEUR 14
+notes[3] PREND_LA_VALEUR 9
+notes[4] PREND_LA_VALEUR 0
+
+// AFFICHER* notes[0]
+// AFFICHER* notes[1]
+// AFFICHER* notes[2]
+// AFFICHER* notes[3]
+// AFFICHER* notes[4]
+
+POUR i ALLANT_DE 0 A 4
+    DEBUT_POUR
+    AFFICHER* notes[i]
+    FIN_POUR  
+
+FIN_ALGORITHME
+```
+
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+notes EST_DU_TYPE LISTE
+i EST_DU_TYPE NOMBRE
+n EST_DU_TYPE NOMBRE
+somme EST_DU_TYPE NOMBRE
+moyenne EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+AFFICHER "Entrez le nombre de notes que vous souhaitez inserer : "
+LIRE n
+
+// [12,13, 14,9,0] 
+POUR i ALLANT_DE 0 A n-1
+	DEBUT_POUR
+	LIRE notes[i]
+	FIN_POUR  
+
+somme PREND_LA_VALEUR 0
+POUR i ALLANT_DE 0 A n-1
+	DEBUT_POUR
+	// i = 0, somme = 0, somme = somme + notes[0] => somme = 0 + 12 = 12
+	// i = 1, somme = 12, somme = somme + notes[1] => somme = 12 + 13 = 25
+	// i = 2, somme = 25, somme = somme + notes[2] => somme = 25 + 14 = 39
+	// i = 3, somme = 39, somme = somme + notes[3] => somme = 39 + 9 = 48
+	// i = 4, somme = 48, somme = somme + notes[4] => somme = 48 + 0 = 48
+	somme PREND_LA_VALEUR somme+notes[i]
+	FIN_POUR  	
+
+	// 48/5 => 9,
+	moyenne PREND_LA_VALEUR somme/n 
+
+	AFFICHER "Somme : "
+	AFFICHER* somme
+	AFFICHER "Moyenne : "
+	AFFICHER moyenne
+
+
+
+FIN_ALGORITHME
+
+```
+
+
+```js
+FONCTIONS_UTILISEES
+VARIABLES
+notes EST_DU_TYPE LISTE
+i EST_DU_TYPE NOMBRE
+n EST_DU_TYPE NOMBRE
+somme EST_DU_TYPE NOMBRE
+moyenne EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+AFFICHER "Entrez le nombre de notes que vous souhaitez inserer : "
+LIRE n
+
+// [12,13, 14,9,0] 
+POUR i ALLANT_DE 0 A n-1
+	DEBUT_POUR
+	LIRE notes[i]
+	FIN_POUR  
+
+
+somme PREND_LA_VALEUR 0
+POUR i ALLANT_DE 0 A notes.length	-1
+	DEBUT_POUR
+	// i = 0, somme = 0, somme = somme + notes[0] => somme = 0 + 12 = 12
+	// i = 1, somme = 12, somme = somme + notes[1] => somme = 12 + 13 = 25
+	// i = 2, somme = 25, somme = somme + notes[2] => somme = 25 + 14 = 39
+	// i = 3, somme = 39, somme = somme + notes[3] => somme = 39 + 9 = 48
+	// i = 4, somme = 48, somme = somme + notes[4] => somme = 48 + 0 = 48
+	somme PREND_LA_VALEUR somme+notes[i]
+	FIN_POUR  	
+
+	// 48/5 => 9,
+	moyenne PREND_LA_VALEUR somme/notes.length
+
+	AFFICHER "Somme : "
+	AFFICHER* somme
+	AFFICHER "Moyenne : "
+	AFFICHER moyenne
+```
+
+## 5. FONCTIONS
+
+
+```js
+// Avant l'utilisation des fonctions
+FONCTIONS_UTILISEES
+VARIABLES
+n EST_DU_TYPE NOMBRE
+puissance EST_DU_TYPE NOMBRE
+i EST_DU_TYPE NOMBRE
+resultat EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+
+n PREND_LA_VALEUR 4
+puissance PREND_LA_VALEUR 2
+
+resultat PREND_LA_VALEUR 1 
+POUR i ALLANT_DE 1 A puissance
+	DEBUT_POUR
+	resultat PREND_LA_VALEUR n*n
+	FIN_POUR  
+
+AFFICHER resultat
+
+FIN_ALGORITHME
+
+```
+
